@@ -5,12 +5,13 @@ private double branchAngle = .5;
 public void setup() 
 {   
 	size(1000,900);
-	noLoop();    
+	noLoop();
+	strokeWeight(2);    
 } 
 public void draw() 
 {   
 	background(127);      
-	for(int i = 0; i < 10; i++){
+	for(int i = 0; i < 3; i++){
 		stroke((float)(Math.random()*256), (float)(Math.random()*256), (float)(Math.random()*256));
 		int x = (int)(Math.random()*500)+200;
 		int y = (int)(Math.random()*150)+50;
@@ -27,7 +28,9 @@ public void drawBranches(int x,int y, double branchLength, double angle)
 	int endY1 = (int)(branchLength*Math.sin(angle1) + y);
 	int endX2 = (int)(branchLength*Math.cos(angle2) + x);
 	int endY2 = (int)(branchLength*Math.sin(angle2) + y);
-	line(x, y, endX1, endY1);  
+	stroke((float)(Math.random()*256), (float)(Math.random()*256), (float)(Math.random()*256));
+	line(x, y, endX1, endY1);
+	stroke((float)(Math.random()*256), (float)(Math.random()*256), (float)(Math.random()*256));  
 	line(x, y, endX2, endY2); 
 	if(branchLength > smallestBranch){
 		drawBranches(endX1, endY1, branchLength*fractionLength, angle1);
